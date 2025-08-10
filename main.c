@@ -12,23 +12,15 @@ typedef enum {STOP = 0, LEFT, RIGHT, UP, DOWN} direction;
 typedef struct {
     int x,y;} position;
 
-typedef struct {
-    position head;
-    position body[100];
-    int length;
-    direction dir;
-    int score;
-    bool gameover;
-} gamestate;
+struct Snake {
+struct Point body[MAX_LENGTH];
+int length;
+Direction dir;
+};
+struct Snake snake;
+struct Point food,powerup;
 
-void setup(gamestate* game){
-    game->head.x = WIDTH/2;
-    game->head.y = HEIGHT/2;
-    game->length = 1;
-    game->dir = STOP;
-    game->score = 0;
-    game->gameover = FALSE;
-}
+
 
 void draw(gamestate* game){
     system("cls");
