@@ -2,15 +2,19 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
+#include <time.h>
 #include <stdbool.h>
 
-#define HEIGHT 31
-#define WIDTH 70
+#define HEIGHT 20
+#define WIDTH 40
+#define MAX_LENGTH 100
+#define INITIAL_SPEED 200
 
-typedef enum {STOP = 0, LEFT, RIGHT, UP, DOWN} direction;
+typedef enum { UP, DOWN, LEFT, RIGHT } Direction;
 
-typedef struct {
-    int x,y;} position;
+struct Point {
+int x,y;
+};
 
 typedef struct {
     position head;
